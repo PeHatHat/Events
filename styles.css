@@ -1,0 +1,87 @@
+/*  ✨✨✨  PHIÊN BẢN CSS SÁNG TẠO VÀ TINH TẾ  ✨✨✨ */
+
+/* Định nghĩa các biến CSS để dễ dàng tùy chỉnh và quản lý màu sắc */
+:root {
+    --primary-color: #fdd835;        /* Vàng ánh kim sang trọng hơn */
+    --secondary-color: #ffffff;      /* Trắng tinh khôi */
+    --accent-color: #e65100;         /* Cam ấm áp, điểm nhấn lễ hội */
+    --background-color: #0a0a0a;     /* Đen sâu hơn, gần như than chì */
+    --text-shadow-color: #ffab40;    /* Cam nhạt hơn, đổ bóng tinh tế */
+    --firework-trail-color: rgba(255,255,255,0.3); /* Vệt pháo hoa mờ hơn, thanh lịch */
+
+    --main-font: 'Playfair Display', serif; /* Phông chữ serif thanh lịch cho dòng chính */
+    --sub-font: 'Montserrat', sans-serif;   /* Phông sans-serif hiện đại cho dòng phụ */
+}
+
+/* Nhúng phông chữ Google Fonts (nếu bạn muốn sử dụng các phông này) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background-color);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: var(--sub-font); /* Phông chữ mặc định cho body là sub-font */
+    user-select: none;
+    text-align: center;
+    /* Thêm gradient nền rất nhẹ để tạo chiều sâu */
+    background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+}
+
+#message1 {
+    font-family: var(--main-font); /* Sử dụng phông chữ serif thanh lịch cho dòng 1 */
+    font-size: 6rem; /* Lớn hơn một chút để nhấn mạnh */
+    font-weight: bold; /* Chữ đậm hơn */
+    color: var(--primary-color);
+    text-shadow: /* Đổ bóng phức tạp hơn, tạo hiệu ứng 3D nhẹ */
+        2px 2px 0 var(--text-shadow-color),
+        4px 4px 0 var(--accent-color),
+        0 0 10px var(--primary-color),
+        0 0 20px var(--primary-color);
+    animation: pulse 2.5s infinite alternate, subtleShadowShift 5s infinite alternate; /* Animation pulse chậm hơn, thêm shadow shift */
+    margin-bottom: 8px; /* Khoảng cách nhỏ hơn một chút */
+    letter-spacing: 1px; /* Tăng khoảng cách chữ một chút */
+}
+
+#message2 {
+    font-family: var(--sub-font); /* Sử dụng phông sans-serif hiện đại cho dòng 2 */
+    font-size: 4rem; /* Nhỏ hơn một chút nữa */
+    font-weight: normal; /* Chữ thường, không đậm */
+    color: var(--secondary-color);
+    text-shadow: /* Đổ bóng tinh tế, nhẹ nhàng hơn */
+        1px 1px 0 #555,
+        0 0 5px var(--secondary-color);
+    animation: fadeInSlideUp 3.5s ease-out forwards; /* Animation fadeIn kết hợp slide-up */
+    opacity: 0;
+    letter-spacing: 0.5px; /* Khoảng cách chữ nhỏ hơn một chút */
+    transform: translateY(20px); /* Bắt đầu từ vị trí thấp hơn một chút */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.9; }
+    100% { transform: scale(1.03); opacity: 1; } /* Scale nhẹ nhàng hơn */
+}
+
+@keyframes subtleShadowShift { /* Animation dịch chuyển bóng đổ nhẹ nhàng */
+    0% { text-shadow: 2px 2px 0 var(--text-shadow-color), 4px 4px 0 var(--accent-color), 0 0 10px var(--primary-color), 0 0 20px var(--primary-color); }
+    100% { text-shadow: 3px 3px 0 var(--text-shadow-color), 5px 5px 0 var(--accent-color), 0 0 12px var(--primary-color), 0 0 22px var(--primary-color); }
+}
+
+
+@keyframes fadeInSlideUp { /* Animation fadeIn kết hợp slide-up */
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
