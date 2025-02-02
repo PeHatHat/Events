@@ -90,7 +90,7 @@ canvas {
 /* ✨✨✨  MEDIA QUERIES CHO MÀN HÌNH ĐIỆN THOẠI  ✨✨✨ */
 @media (max-width: 768px) { /* Áp dụng cho màn hình nhỏ hơn 768px (điện thoại) */
     #message1 {
-        font-size: 4rem; /* Giảm kích thước chữ dòng 1 trên điện thoại */
+        font-size: 2rem; /* Giảm kích thước chữ dòng 1 trên điện thoại */
         margin-bottom: 4px; /* Giảm khoảng cách dòng 1 và 2 trên điện thoại */
         letter-spacing: 0.5px; /* Giảm khoảng cách chữ dòng 1 trên điện thoại */
         text-shadow: /* Bóng đổ đơn giản hơn trên điện thoại */
@@ -101,7 +101,7 @@ canvas {
     }
 
     #message2 {
-        font-size: 2rem; /* Giảm kích thước chữ dòng 2 trên điện thoại */
+        font-size: 1rem; /* Giảm kích thước chữ dòng 2 trên điện thoại */
         letter-spacing: 0.2px; /* Giảm khoảng cách chữ dòng 2 trên điện thoại */
         transform: translateY(10px); /* Slide up ít hơn nữa trên điện thoại */
     }
